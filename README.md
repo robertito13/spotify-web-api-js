@@ -10,7 +10,7 @@ A list of selected wrappers for different languages and environments is availabl
 The wrapper includes helper functions to do the following:
 
 #### Music metadata
-- Albums, artists, tracks and playlists
+- Albums, artists, tracks, shows, episodes and playlists
 - Audio features and audio analysis for tracks
 - Albums for a specific artist
 - Top tracks for a specific artist
@@ -20,7 +20,7 @@ The wrapper includes helper functions to do the following:
 - User's emails, product type, display name, birthdate, image
 
 #### Search
-- Albums, artists, tracks, and playlists
+- Albums, artists, tracks, shows, episodes and playlists
 
 #### Playlist manipulation
 - Get a user's playlists
@@ -71,6 +71,10 @@ The wrapper includes helper functions to do the following:
 - Set repeat mode on user's playback
 - Set volume for user's playback
 - Toggle shuffle for user's playback
+
+#### Saved Shows
+- Add, remove, and get shows that are in the signed in user's saved shows
+- Check if a show is in the signed in user's saved shows
 
 ## Installation
 Install via bower (browser):
