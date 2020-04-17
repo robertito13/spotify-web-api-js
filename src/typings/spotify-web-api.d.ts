@@ -1051,6 +1051,178 @@ declare namespace SpotifyWebApi {
         setShuffle(state: boolean, callback: VoidResultsCallback): void;
 
         /**
+         * Fetches a show from the Spotify catalog.
+         * See [Get a Show](https://developer.spotify.com/documentation/web-api/reference/shows/get-a-show/) on
+         * the Spotify Developer site for more information about the endpoint.
+         *
+         * @param {string} showId The id of the show. If you know the Spotify URI it is easy
+         * to find the show id (e.g. spotify:show:<here_is_the_show_id>)
+         * @param {Object} options A JSON object with options that can be passed
+         * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
+         * one is the error object (null if no error), and the second is the value if the request succeeded.
+         * @return {Object} Null if a callback is provided, a `Promise` object otherwise
+         */
+        getShow(showId: string, options?: SpotifyApi.DeviceSpecificParameterObject): Promise<void>;
+        getShow(showId: string, options: SpotifyApi.DeviceSpecificParameterObject, callback: VoidResultsCallback): void;
+        getShow(showId: string, callback: VoidResultsCallback): void;
+
+        /**
+         * Fetches multiple shows from the Spotify catalog.
+         * See [Get Several Shows](https://developer.spotify.com/documentation/web-api/reference/shows/get-several-shows/) on
+         * the Spotify Developer site for more information about the endpoint.
+         *
+         * @param {Array<string>} showIds The ids of the shows. If you know their Spotify URI it is easy
+         * to find their show id (e.g. spotify:show:<here_is_the_show_id>)
+         * @param {Object} options A JSON object with options that can be passed
+         * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
+         * one is the error object (null if no error), and the second is the value if the request succeeded.
+         * @return {Object} Null if a callback is provided, a `Promise` object otherwise
+         */
+        getShows(showIds: string[], options?: SpotifyApi.DeviceSpecificParameterObject): Promise<void>;
+        getShows(showIds: string[], options: SpotifyApi.DeviceSpecificParameterObject, callback: VoidResultsCallback): void;
+        getShows(showIds: string[], callback: VoidResultsCallback): void;
+
+        /**
+         * Fetches current user's saved shows.
+         * See [Get Current User's Saved Shows](https://developer.spotify.com/documentation/web-api/reference/library/get-users-saved-shows/) on
+         * the Spotify Developer site for more information about the endpoint.
+         *
+         * @param {Object} options A JSON object with options that can be passed
+         * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
+         * one is the error object (null if no error), and the second is the value if the request succeeded.
+         * @return {Object} Null if a callback is provided, a `Promise` object otherwise
+         */
+        getMySavedShows(options?: SpotifyApi.DeviceSpecificParameterObject): Promise<void>;
+        getMySavedShows(options: SpotifyApi.DeviceSpecificParameterObject, callback: VoidResultsCallback): void;
+        getMySavedShows(callback: VoidResultsCallback): void;
+
+        /**
+         * Adds a list of shows to the current user's saved shows.
+         * See [Save Shows for Current User](https://developer.spotify.com/documentation/web-api/reference/library/save-shows-user/) on
+         * the Spotify Developer site for more information about the endpoint.
+         *
+         * @param {Array<string>} showIds The ids of the shows. If you know their Spotify URI it is easy
+         * to find their show id (e.g. spotify:show:<here_is_the_show_id>)
+         * @param {Object} options A JSON object with options that can be passed
+         * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
+         * one is the error object (null if no error), and the second is the value if the request succeeded.
+         * @return {Object} Null if a callback is provided, a `Promise` object otherwise
+         */
+        addToMySavedShows(showIds: string[], options?: SpotifyApi.DeviceSpecificParameterObject): Promise<void>;
+        addToMySavedShows(showIds: string[], options: SpotifyApi.DeviceSpecificParameterObject, callback: VoidResultsCallback): void;
+        addToMySavedShows(showIds: string[], callback: VoidResultsCallback): void;
+
+        /**
+         * Remove a list of shows from the current user's saved shows.
+         * See [Remove Shows for Current User](https://developer.spotify.com/documentation/web-api/reference/library/remove-shows-user/) on
+         * the Spotify Developer site for more information about the endpoint.
+         *
+         * @param {Array<string>} showIds The ids of the shows. If you know their Spotify URI it is easy
+         * to find their show id (e.g. spotify:show:<here_is_the_show_id>)
+         * @param {Object} options A JSON object with options that can be passed
+         * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
+         * one is the error object (null if no error), and the second is the value if the request succeeded.
+         * @return {Object} Null if a callback is provided, a `Promise` object otherwise
+         */
+        removeFromMySavedShows(showIds: string[], options?: SpotifyApi.DeviceSpecificParameterObject): Promise<void>;
+        removeFromMySavedShows(showIds: string[], options: SpotifyApi.DeviceSpecificParameterObject, callback: VoidResultsCallback): void;
+        removeFromMySavedShows(showIds: string[], callback: VoidResultsCallback): void;
+
+        /**
+         * Checks if the current user's saved shows contains a certain list of shows.
+         * See [Check Current User's Saved Shows](https://developer.spotify.com/documentation/web-api/reference/library/check-users-saved-shows/) on
+         * the Spotify Developer site for more information about the endpoint.
+         *
+         * @param {Array<string>} showIds The ids of the shows. If you know their Spotify URI it is easy
+         * to find their show id (e.g. spotify:show:<here_is_the_show_id>)
+         * @param {Object} options A JSON object with options that can be passed
+         * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
+         * one is the error object (null if no error), and the second is the value if the request succeeded.
+         * @return {Object} Null if a callback is provided, a `Promise` object otherwise
+         */
+        containsMySavedShows(showIds: string[], options?: SpotifyApi.DeviceSpecificParameterObject): Promise<void>;
+        containsMySavedShows(showIds: string[], options: SpotifyApi.DeviceSpecificParameterObject, callback: VoidResultsCallback): void;
+        containsMySavedShows(showIds: string[], callback: VoidResultsCallback): void;
+
+        /**
+         * Fetches the episodes of an show from the Spotify catalog.
+         * See [Get an Show's Episodes](https://developer.spotify.com/documentation/web-api/reference/shows/get-shows-episodes/) on
+         * the Spotify Developer site for more information about the endpoint.
+         *
+         * @param {string} showId The id of the show. If you know the Spotify URI it is easy
+         * to find the show id (e.g. spotify:show:<here_is_the_show_id>)
+         * @param {Object} options A JSON object with options that can be passed
+         * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
+         * one is the error object (null if no error), and the second is the value if the request succeeded.
+         * @return {Object} Null if a callback is provided, a `Promise` object otherwise
+         */
+        getShowEpisodes(showId: string, options?: SpotifyApi.DeviceSpecificParameterObject): Promise<void>;
+        getShowEpisodes(showId: string, options: SpotifyApi.DeviceSpecificParameterObject, callback: VoidResultsCallback): void;
+        getShowEpisodes(showId: string, callback: VoidResultsCallback): void;
+
+        /**
+         * Fetches shows from the Spotify catalog according to a query.
+         * See [Search for an Item](https://developer.spotify.com/web-api/search-item/) on
+         * the Spotify Developer site for more information about the endpoint.
+         *
+         * @param {string} query The search query
+         * @param {Object} options A JSON object with options that can be passed
+         * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
+         * one is the error object (null if no error), and the second is the value if the request succeeded.
+         * @return {Object} Null if a callback is provided, a `Promise` object otherwise
+         */
+        searchShows(query: string, options?: SpotifyApi.DeviceSpecificParameterObject): Promise<void>;
+        searchShows(query: string, options: SpotifyApi.DeviceSpecificParameterObject, callback: VoidResultsCallback): void;
+        searchShows(query: string, callback: VoidResultsCallback): void;
+
+        /**
+         * Fetches an episode from the Spotify catalog.
+         * See [Get an Episode](https://developer.spotify.com/documentation/web-api/reference/episodes/get-an-episode/) on
+         * the Spotify Developer site for more information about the endpoint.
+         *
+         * @param {string} episodeId The id of the episode. If you know the Spotify URI it is easy
+         * to find the episode id (e.g. spotify:episode:<here_is_the_episode_id>)
+         * @param {Object} options A JSON object with options that can be passed
+         * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
+         * one is the error object (null if no error), and the second is the value if the request succeeded.
+         * @return {Object} Null if a callback is provided, a `Promise` object otherwise
+         */
+        getEpisode(episodeId: string, options?: SpotifyApi.DeviceSpecificParameterObject): Promise<void>;
+        getEpisode(episodeId: string, options: SpotifyApi.DeviceSpecificParameterObject, callback: VoidResultsCallback): void;
+        getEpisode(episodeId: string, callback: VoidResultsCallback): void;
+
+        /**
+         * Fetches multiple episodes from the Spotify catalog.
+         * See [Get Several Episodes](https://developer.spotify.com/documentation/web-api/reference/episodes/get-several-episodes/) on
+         * the Spotify Developer site for more information about the endpoint.
+         *
+         * @param {Array<string>} episodeIds The ids of the episodes. If you know their Spotify URI it is easy
+         * to find their episode id (e.g. spotify:episode:<here_is_the_episode_id>)
+         * @param {Object} options A JSON object with options that can be passed
+         * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
+         * one is the error object (null if no error), and the second is the value if the request succeeded.
+         * @return {Object} Null if a callback is provided, a `Promise` object otherwise
+         */
+        getEpisodes(episodeIds: string[], options?: SpotifyApi.DeviceSpecificParameterObject): Promise<void>;
+        getEpisodes(episodeIds: string[], options: SpotifyApi.DeviceSpecificParameterObject, callback: VoidResultsCallback): void;
+        getEpisodes(episodeIds: string[], callback: VoidResultsCallback): void;
+
+        /**
+         * Fetches episodes from the Spotify catalog according to a query.
+         * See [Search for an Item](https://developer.spotify.com/web-api/search-item/) on
+         * the Spotify Developer site for more information about the endpoint.
+         *
+         * @param {string} query The search query
+         * @param {Object} options A JSON object with options that can be passed
+         * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
+         * one is the error object (null if no error), and the second is the value if the request succeeded.
+         * @return {Object} Null if a callback is provided, a `Promise` object otherwise
+         */
+        searchEpisodes(query: string, options?: SpotifyApi.DeviceSpecificParameterObject): Promise<void>;
+        searchEpisodes(query: string, options: SpotifyApi.DeviceSpecificParameterObject, callback: VoidResultsCallback): void;
+        searchEpisodes(query: string, callback: VoidResultsCallback): void;
+
+        /**
          * Gets the access token in use.
          *
          * @return {string} accessToken The access token
