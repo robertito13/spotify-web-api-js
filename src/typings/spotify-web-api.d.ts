@@ -1062,9 +1062,9 @@ declare namespace SpotifyWebApi {
          * one is the error object (null if no error), and the second is the value if the request succeeded.
          * @return {Object} Null if a callback is provided, a `Promise` object otherwise
          */
-        getShow(showId: string, options?: SpotifyApi.DeviceSpecificParameterObject): Promise<void>;
-        getShow(showId: string, options: SpotifyApi.DeviceSpecificParameterObject, callback: VoidResultsCallback): void;
-        getShow(showId: string, callback: VoidResultsCallback): void;
+        getShow(showId: string, options?: SpotifyApi.DeviceSpecificParameterObject): Promise<SpotifyApi.SingleShowResponse>;
+        getShow(showId: string, options: SpotifyApi.DeviceSpecificParameterObject, callback: ResultsCallback<SpotifyApi.SingleShowResponse>): void;
+        getShow(showId: string, callback: ResultsCallback<SpotifyApi.SingleShowResponse>): void;
 
         /**
          * Fetches multiple shows from the Spotify catalog.
@@ -1078,9 +1078,9 @@ declare namespace SpotifyWebApi {
          * one is the error object (null if no error), and the second is the value if the request succeeded.
          * @return {Object} Null if a callback is provided, a `Promise` object otherwise
          */
-        getShows(showIds: string[], options?: SpotifyApi.DeviceSpecificParameterObject): Promise<void>;
-        getShows(showIds: string[], options: SpotifyApi.DeviceSpecificParameterObject, callback: VoidResultsCallback): void;
-        getShows(showIds: string[], callback: VoidResultsCallback): void;
+        getShows(showIds: string[], options?: SpotifyApi.DeviceSpecificParameterObject): Promise<SpotifyApi.MultipleShowsResponse>;
+        getShows(showIds: string[], options: SpotifyApi.DeviceSpecificParameterObject, callback: ResultsCallback<SpotifyApi.MultipleShowsResponse>): void;
+        getShows(showIds: string[], callback: ResultsCallback<SpotifyApi.MultipleShowsResponse>): void;
 
         /**
          * Fetches current user's saved shows.
@@ -1094,7 +1094,7 @@ declare namespace SpotifyWebApi {
          */
         getMySavedShows(options?: SpotifyApi.DeviceSpecificParameterObject): Promise<void>;
         getMySavedShows(options: SpotifyApi.DeviceSpecificParameterObject, callback: VoidResultsCallback): void;
-        getMySavedShows(callback: VoidResultsCallback): void;
+        getMySavedShows(callback: ResultsCallback<SpotifyApi.MultipleShowsResponse>): void;
 
         /**
          * Adds a list of shows to the current user's saved shows.
@@ -1156,9 +1156,9 @@ declare namespace SpotifyWebApi {
          * one is the error object (null if no error), and the second is the value if the request succeeded.
          * @return {Object} Null if a callback is provided, a `Promise` object otherwise
          */
-        getShowEpisodes(showId: string, options?: SpotifyApi.DeviceSpecificParameterObject): Promise<void>;
-        getShowEpisodes(showId: string, options: SpotifyApi.DeviceSpecificParameterObject, callback: VoidResultsCallback): void;
-        getShowEpisodes(showId: string, callback: VoidResultsCallback): void;
+        getShowEpisodes(showId: string, options?: SpotifyApi.DeviceSpecificParameterObject): Promise<SpotifyApi.ShowEpisodesResponse>;
+        getShowEpisodes(showId: string, options: SpotifyApi.DeviceSpecificParameterObject, callback: ResultsCallback<SpotifyApi.ShowEpisodesResponse>): void;
+        getShowEpisodes(showId: string, callback: ResultsCallback<SpotifyApi.ShowEpisodesResponse>): void;
 
         /**
          * Fetches shows from the Spotify catalog according to a query.
@@ -1171,9 +1171,9 @@ declare namespace SpotifyWebApi {
          * one is the error object (null if no error), and the second is the value if the request succeeded.
          * @return {Object} Null if a callback is provided, a `Promise` object otherwise
          */
-        searchShows(query: string, options?: SpotifyApi.DeviceSpecificParameterObject): Promise<void>;
-        searchShows(query: string, options: SpotifyApi.DeviceSpecificParameterObject, callback: VoidResultsCallback): void;
-        searchShows(query: string, callback: VoidResultsCallback): void;
+        searchShows(query: string, options?: SpotifyApi.DeviceSpecificParameterObject): Promise<SpotifyApi.ShowSearchResponse>;
+        searchShows(query: string, options: SpotifyApi.DeviceSpecificParameterObject, callback: ResultsCallback<SpotifyApi.ShowSearchResponse>): void;
+        searchShows(query: string, callback: ResultsCallback<SpotifyApi.ShowSearchResponse>): void;
 
         /**
          * Fetches an episode from the Spotify catalog.
@@ -1187,9 +1187,9 @@ declare namespace SpotifyWebApi {
          * one is the error object (null if no error), and the second is the value if the request succeeded.
          * @return {Object} Null if a callback is provided, a `Promise` object otherwise
          */
-        getEpisode(episodeId: string, options?: SpotifyApi.DeviceSpecificParameterObject): Promise<void>;
-        getEpisode(episodeId: string, options: SpotifyApi.DeviceSpecificParameterObject, callback: VoidResultsCallback): void;
-        getEpisode(episodeId: string, callback: VoidResultsCallback): void;
+        getEpisode(episodeId: string, options?: SpotifyApi.DeviceSpecificParameterObject): Promise<SpotifyApi.SingleEpisodeResponse>;
+        getEpisode(episodeId: string, options: SpotifyApi.DeviceSpecificParameterObject, callback: ResultsCallback<SpotifyApi.SingleEpisodeResponse>): void;
+        getEpisode(episodeId: string, callback: ResultsCallback<SpotifyApi.SingleEpisodeResponse>): void;
 
         /**
          * Fetches multiple episodes from the Spotify catalog.
@@ -1203,9 +1203,9 @@ declare namespace SpotifyWebApi {
          * one is the error object (null if no error), and the second is the value if the request succeeded.
          * @return {Object} Null if a callback is provided, a `Promise` object otherwise
          */
-        getEpisodes(episodeIds: string[], options?: SpotifyApi.DeviceSpecificParameterObject): Promise<void>;
-        getEpisodes(episodeIds: string[], options: SpotifyApi.DeviceSpecificParameterObject, callback: VoidResultsCallback): void;
-        getEpisodes(episodeIds: string[], callback: VoidResultsCallback): void;
+        getEpisodes(episodeIds: string[], options?: SpotifyApi.DeviceSpecificParameterObject): Promise<SpotifyApi.MultipleEpisodesResponse>;
+        getEpisodes(episodeIds: string[], options: SpotifyApi.DeviceSpecificParameterObject, callback: ResultsCallback<SpotifyApi.MultipleEpisodesResponse>): void;
+        getEpisodes(episodeIds: string[], callback: ResultsCallback<SpotifyApi.MultipleEpisodesResponse>): void;
 
         /**
          * Fetches episodes from the Spotify catalog according to a query.
@@ -1218,9 +1218,9 @@ declare namespace SpotifyWebApi {
          * one is the error object (null if no error), and the second is the value if the request succeeded.
          * @return {Object} Null if a callback is provided, a `Promise` object otherwise
          */
-        searchEpisodes(query: string, options?: SpotifyApi.DeviceSpecificParameterObject): Promise<void>;
-        searchEpisodes(query: string, options: SpotifyApi.DeviceSpecificParameterObject, callback: VoidResultsCallback): void;
-        searchEpisodes(query: string, callback: VoidResultsCallback): void;
+        searchEpisodes(query: string, options?: SpotifyApi.DeviceSpecificParameterObject): Promise<SpotifyApi.EpisodeSearchResponse>;
+        searchEpisodes(query: string, options: SpotifyApi.DeviceSpecificParameterObject, callback: ResultsCallback<SpotifyApi.EpisodeSearchResponse>): void;
+        searchEpisodes(query: string, callback: ResultsCallback<SpotifyApi.EpisodeSearchResponse>): void;
 
         /**
          * Gets the access token in use.

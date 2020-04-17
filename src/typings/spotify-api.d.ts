@@ -1049,4 +1049,132 @@ declare namespace SpotifyApi {
 
     type ContextObjectType = 'artist' | 'playlist' | 'album';
     type PlaybackRepeatState = 'off' | 'track' | 'context';
+
+    /**
+     * Simplified Episode Object
+     * [episode object (simplified)](https://developer.spotify.com/documentation/web-api/reference/object-model/#episode-object-simplified)
+     */
+    interface EpisodeObjectSimplified {
+        audio_preview_url: string,
+        description: string,
+        duration_ms: number,
+        explicit: boolean,
+        external_urls: ExternalUrlObject,
+        href: string,
+        id: string,
+        images: ImageObject[],
+        is_externally_hosted: boolean,
+        is_playable: boolean,
+        language?: string, // Deprecated
+        languages: string[],
+        name: string,
+        release_date: string,
+        release_date_precision: string,
+        resume_point: any,
+        type: "episode",
+        uri: string
+    }
+
+    /**
+     * Full Episode Object
+     * [episode object (full)](https://developer.spotify.com/documentation/web-api/reference/object-model/#episode-object-full)
+     */
+    interface EpisodeObjectFull extends EpisodeObjectSimplified {
+        show: ShowObjectSimplified
+    }
+
+    /**
+     * Get an Episode
+     * 
+     * GET /v1/episodes/{id}
+     * https://developer.spotify.com/documentation/web-api/reference/episodes/get-an-episode/
+     */
+    interface SingleEpisodeResponse extends EpisodeObjectFull {}
+
+    /**
+     * Get Several Episodes
+     * 
+     * /v1/episodes?ids={ids} 
+     * https://developer.spotify.com/documentation/web-api/reference/episodes/get-several-episodes/
+     */
+    interface MultipleEpisodesResponse {
+        episodes: EpisodeObjectFull[]
+    }
+
+    /**
+     * Search for an episode
+     * 
+     * GET /v1/search?type=episode
+     * https://developer.spotify.com/web-api/search-item/
+     */
+    interface EpisodeSearchResponse {
+        episodes: PagingObject<EpisodeObjectFull>
+    }
+
+    /**
+     * Get a Show’s Episodes
+     * 
+     * GET /v1/show/{id}/episodes
+     * https://developer.spotify.com/documentation/web-api/reference/shows/get-shows-episodes/
+     */
+    interface ShowEpisodesResponse extends PagingObject<EpisodeObjectSimplified> {}
+
+    /**
+     * Simplified Show Object
+     * [show object (simplified)](https://developer.spotify.com/documentation/web-api/reference/object-model/#show-object-simplified)
+     */
+    interface ShowObjectSimplified {
+        available_markets?: string[],
+        copyrights: CopyrightObject[],
+        description: string,
+        explicit: boolean,
+        episodes: ShowEpisodesResponse,
+        external_urls: ExternalUrlObject,
+        href: string,
+        id: string,
+        images: ImageObject[],
+        is_externally_hosted: boolean,
+        languages: string[],
+        media_type: string,
+        name: string,
+        publisher: string,
+        type: "show",
+        uri: string
+    }
+
+    /**
+     * Full Show Object
+     * [show object (full)](https://developer.spotify.com/documentation/web-api/reference/object-model/#show-object-full)
+     */
+    interface ShowObjectFull extends ShowObjectSimplified {
+        episodes: ShowEpisodesResponse,
+    }
+
+    /**
+     * Get a Show
+     * 
+     * GET /v1/shows/{id}
+     * https://developer.spotify.com/documentation/web-api/reference/shows/get-a-show/
+     */
+    interface SingleShowResponse extends ShowObjectFull {}
+
+    /**
+     * Get Several Shows
+     * 
+     * /v1/shows?ids={ids} 
+     * https://developer.spotify.com/documentation/web-api/reference/shows/get-several-shows/
+     */
+    interface MultipleShowsResponse {
+        shows: ShowObjectFull[]
+    }
+
+    /**
+     * Search for a show
+     * 
+     * GET /v1/search?type=show
+     * https://developer.spotify.com/web-api/search-item/
+     */
+    interface ShowSearchResponse {
+        shows: PagingObject<ShowObjectFull>
+    }
 }
