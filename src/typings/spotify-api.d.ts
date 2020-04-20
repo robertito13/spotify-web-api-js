@@ -1070,7 +1070,7 @@ declare namespace SpotifyApi {
         name: string,
         release_date: string,
         release_date_precision: string,
-        resume_point: any,
+        resume_point?: any,
         type: "episode",
         uri: string
     }
