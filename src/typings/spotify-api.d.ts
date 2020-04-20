@@ -1128,7 +1128,6 @@ declare namespace SpotifyApi {
         copyrights: CopyrightObject[],
         description: string,
         explicit: boolean,
-        episodes: ShowEpisodesResponse,
         external_urls: ExternalUrlObject,
         href: string,
         id: string,
