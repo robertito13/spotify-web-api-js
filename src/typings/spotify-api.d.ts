@@ -1155,7 +1155,7 @@ declare namespace SpotifyApi {
      */
     interface SavedShowObject {
         added_at: string,
-        album: ShowObjectFull
+        show: ShowObjectFull
     }
 
     /**
