@@ -1092,9 +1092,9 @@ declare namespace SpotifyWebApi {
          * one is the error object (null if no error), and the second is the value if the request succeeded.
          * @return {Object} Null if a callback is provided, a `Promise` object otherwise
          */
-        getMySavedShows(options?: SpotifyApi.DeviceSpecificParameterObject): Promise<void>;
-        getMySavedShows(options: SpotifyApi.DeviceSpecificParameterObject, callback: VoidResultsCallback): void;
-        getMySavedShows(callback: ResultsCallback<SpotifyApi.MultipleShowsResponse>): void;
+        getMySavedShows(options?: SpotifyApi.DeviceSpecificParameterObject): Promise<SpotifyApi.UsersSavedShowsResponse>;
+        getMySavedShows(options: SpotifyApi.DeviceSpecificParameterObject, callback: ResultsCallback<SpotifyApi.UsersSavedShowsResponse>): void;
+        getMySavedShows(callback: ResultsCallback<SpotifyApi.UsersSavedShowsResponse>): void;
 
         /**
          * Adds a list of shows to the current user's saved shows.

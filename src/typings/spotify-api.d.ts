@@ -1150,6 +1150,15 @@ declare namespace SpotifyApi {
     }
 
     /**
+     * Saved Show Object
+     * [saved show object](https://developer.spotify.com/documentation/web-api/reference/object-model/#saved-show-object)
+     */
+    interface SavedShowObject {
+        added_at: string,
+        album: ShowObjectFull
+    }
+
+    /**
      * Get a Show
      * 
      * GET /v1/shows/{id}
@@ -1176,4 +1185,12 @@ declare namespace SpotifyApi {
     interface ShowSearchResponse {
         shows: PagingObject<ShowObjectFull>
     }
+
+    /**
+     * Get user's saved shows
+     * 
+     * GET /v1/me/shows
+     * https://developer.spotify.com/web-api/get-users-saved-shows/
+     */
+    interface UsersSavedShowsResponse extends PagingObject<SavedShowObject> {}
 }
