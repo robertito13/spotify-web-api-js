@@ -1051,6 +1051,16 @@ declare namespace SpotifyApi {
     type PlaybackRepeatState = 'off' | 'track' | 'context';
 
     /**
+     * Resume Point Object
+     * [resume point object](https://developer.spotify.com/documentation/web-api/reference/shows/get-shows-episodes/#resume-point-object)
+     */
+
+     interface ResumePointObject {
+         fully_played: boolean;
+         resume_position_ms: number;
+     }
+
+    /**
      * Simplified Episode Object
      * [episode object (simplified)](https://developer.spotify.com/documentation/web-api/reference/object-model/#episode-object-simplified)
      */
@@ -1070,7 +1080,7 @@ declare namespace SpotifyApi {
         name: string,
         release_date: string,
         release_date_precision: string,
-        resume_point?: any,
+        resume_point: ResumePointObject,
         type: "episode",
         uri: string
     }
